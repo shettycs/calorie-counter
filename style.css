@@ -1,0 +1,201 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('background2.jpeg'); /* Background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background for header */
+    display: flex;
+    justify-content: space-between; /* Adjust links to both sides */
+    position: fixed; /* Keeps header at the top */
+    top: 0;
+    z-index: 1000; /* Ensures header stays above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Spacing between links */
+    list-style: none;
+}
+
+.nav-links li {
+    list-style-type: none;
+}
+
+.nav-links a {
+    color: rgb(139, 27, 27);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFD700; /* Yellow on hover */
+}
+
+/* Container styling */
+.container {
+    width: 40%;
+    max-width: 600px;
+    margin: 100px auto 20px; /* Space below header */
+    background-color: #f4b5b5;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #4CAF50;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Goal selection and forms */
+.goal-selection, .form-container {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f7f9fc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Label and input fields */
+label {
+    display: block;
+    margin: 8px 0 4px;
+    font-weight: bold;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Food list styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #eaf6f6;
+    border-radius: 8px;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+li button {
+    background-color: #FF6347; /* Remove button color */
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px; /* Fixed padding */
+    width: 80px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Center text inside button */
+}
+
+li button:hover {
+    background-color: #e74c3c; /* Darker red on hover */
+}
+
+
+/* Headings and status styling */
+h3 {
+    color: #333;
+    margin-top: 15px;
+    font-size: 1.25rem;
+}
+
+#goalStatus {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #FF6347;
+    margin-top: 15px;
+}
+
+/* Status color customization */
+.under-goal {
+    color: #FFD700; /* Yellow */
+}
+
+.on-track {
+    color: #4CAF50; /* Green */
+}
+
+.over-goal {
+    color: #FF6347; /* Red */
+}
