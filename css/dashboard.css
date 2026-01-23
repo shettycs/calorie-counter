@@ -1,0 +1,80 @@
+/* From your style.css, with additions */
+body {
+    background-image: url('../assets/images/background2.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 40%;
+    max-width: 600px;
+    margin: 100px auto 20px;
+    background-color: #f4b5b5;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 8px 0 4px;
+    font-weight: bold;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #eaf6f6;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li button.remove-btn {
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#history {
+    margin-top: 30px;
+}
+
+.history-day {
+    margin-bottom: 20px;
+}
+
+.history-day h4 {
+    cursor: pointer;
+    background: #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.history-day ul {
+    display: none; /* Toggle with JS */
+}
+
+.history-day.open ul {
+    display: block;
+}

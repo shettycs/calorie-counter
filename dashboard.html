@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Counter Dashboard</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Header with Navigation Links -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a id="logout" href="#">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Calorie Counter Content -->
+    <center>
+        <div class="container">
+            <h1>Calorie Counter</h1>
+
+            <!-- User Goal Selection -->
+            <div class="goal-selection">
+            </div>
+
+            <!-- Form to Add Food Item -->
+            <h2>Add Food Item</h2>
+            <form id="foodForm">
+                <label for="foodName">Food Item:</label>
+                <input type="text" id="foodName" list="foodOptions" placeholder="Enter food name" required>
+                <datalist id="foodOptions">
+                    <option value="Apple">
+                    <option value="Banana">
+                    <option value="Orange">
+                    <option value="Broccoli">
+                    <option value="Chicken Breast">
+                    <option value="Egg">
+                    <option value="Bagel">
+                    <option value="Biscuit">
+                    <option value="Breadsticks">
+                    <option value="Bread white">
+                    <option value="Bread whole wheat">
+                    <option value="Cereal">
+                    <option value="Cookie (oatmeal raisin)(1)">
+                    <option value="Cornbread (1 square)">
+                    <option value="Cream of Rice (3/4 cup)">
+                    <option value="Cream of Wheat (3/4 cup)">
+                    <option value="English Muffin">
+                    <option value="Fig Bar">
+                    <option value="Waffles">
+                </datalist>
+
+                <label for="calories">Calories:</label>
+                <input type="number" id="calories" placeholder="Calories will appear here" readonly>
+
+                <button type="submit">Add</button>
+            </form>
+
+            <!-- Displaying Food List and Total Calorie Intake -->
+            <h2>Food List</h2>
+            <ul id="foodList"></ul>
+
+            <h3>Total Calorie Intake: <span id="totalCalories">0</span> kcal</h3>
+
+            <!-- Displaying Goal Status -->
+            <h3 id="goalStatus"></h3>
+
+            <div id="history">
+                <h2>History</h2>
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </center>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

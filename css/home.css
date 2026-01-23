@@ -1,0 +1,30 @@
+/* Hero, features, etc. from original style1.css */
+.hero {
+    background-color: #84e887;
+    color: rgb(14, 14, 14);
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
+    background-image: url('../assets/images/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ... rest from your style1.css, remove duplicates with main.css */
+.hero h2 { font-size: 36px; }
+.hero p { font-size: 18px; margin: 20px 0; }
+
+.features {
+    background-color: rgb(236, 245, 119);
+    padding: 50px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.features h2 { font-size: 32px; margin-bottom: 20px; }
+.feature { margin: 20px auto; max-width: 600px; }
+.feature h3 { font-size: 24px; margin: 10px 0; }
+.feature p { font-size: 16px; }
+
+/* Media queries from original */

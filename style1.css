@@ -1,0 +1,210 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(assets/images/background3.jpeg) no-repeat center center/cover; /* Background Image */
+  color: #111111;
+}
+
+/* Header Styling for Home Page */
+header {
+  background-color: #2d3a3a;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo h1 {
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  margin-right: 20px;
+}
+
+header nav ul li {
+  margin: 0 10px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
+}
+
+header nav ul li a:hover {
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #84e887;
+  color: rgb(14, 14, 14);
+  padding: 60px 20px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('assets/images/background1.png'); /* Replace with your image URL */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; 
+}
+
+.hero h2 {
+  font-size: 36px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+/* Get Started Button */
+.cta-btn {
+  background-color: rgb(86, 226, 65); /* Changed to orange */
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.cta-btn:hover {
+  background-color: #f0af0c; /* Darker shade of orange for hover effect */
+}
+
+/* Features Section */
+.features {
+  background-color: rgb(236, 245, 119);
+  padding: 50px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.features h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.feature {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.feature h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.feature p {
+  font-size: 16px;
+}
+
+/* Footer */
+footer {
+  background-color: #0f0e0e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Sign-in and Sign-up Form Container */
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #f42d0a;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #111611;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+a {
+  color: #2d4ac8;
+  text-decoration: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .features h2 {
+    font-size: 28px;
+  }
+
+  .feature h3 {
+    font-size: 20px;
+  }
+
+  .form-section form {
+    padding: 20px;
+  }
+}
