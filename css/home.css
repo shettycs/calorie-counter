@@ -2,18 +2,46 @@
 .hero {
     background-color: #84e887;
     color: rgb(14, 14, 14);
-    padding: 60px 20px;
+    padding: 140px 20px 100px;
     text-align: center;
     width: 100%;
     background-image: url('../assets/images/background1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    /*padding-top: 120px;
+    padding-bottom: 80px;*/
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* ... rest from your style1.css, remove duplicates with main.css */
-.hero h2 { font-size: 36px; }
-.hero p { font-size: 18px; margin: 20px 0; }
+.hero h2 { 
+    font-size: 36px; 
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero p { 
+    font-size: 18px; 
+    margin: 20px 0; 
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    font-size: 1.3rem;
+    padding: 1rem 2.5rem;
+}
 
 .features {
     background-color: rgb(236, 245, 119);

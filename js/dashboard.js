@@ -10,6 +10,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     const historySection = document.getElementById('history'); // New
 
     const foodDatabase = { /* Your original foodDatabase */ };
+    const token = localStorage.getItem('token');
+    
+    if (!token) {
+        alert("Please sign in first");
+        window.location.href = 'signin.html';
+        return;
+    }
+
+    // Optional: verify token by calling a protected endpoint
+    try {
+        const res = await fetch('http://localhost:3000/api/profile', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        
+        if (!res.ok) {
+            localStorage.removeItem('token');
+            window.location.href = 'signin.html';
+            return;
+        }
+        
+        // proceed with normal dashboard loading
+        const profile = await res.json();
+        // ... rest of your code ...
+        
+    } catch (err) {
+        console.error(err);
+        localStorage.removeItem('token');
+        window.location.href = 'signin.html';
+    }
 
     logoutButton.addEventListener('click', () => {
         clearToken();
@@ -176,4 +205,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             return null;
         }
     }
+
+    document.getElementById('logout').addEventListener('click', (e) => {
+        e.preventDefault();
+        localStorage.removeItem('token');
+        window.location.href = 'index.html';
+    });
 });
