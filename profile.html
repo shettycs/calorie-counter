@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Calorie Tracker</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">  <!-- Reuse dashboard styles -->
+</head>
+<body>
+    <header>
+        <nav class="dashboard-nav">
+            <div class="logo"><h1>Calorie Counter</h1></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a id="logout" href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <center>
+        <div class="container">
+            <h1>Your Profile</h1>
+            <div class="goal-selection">
+                <!-- Profile form loaded by JS -->
+            </div>
+        </div>
+    </center>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>  <!-- Reuse dashboard logic -->
+</body>
+</html>
