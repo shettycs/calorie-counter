@@ -7,12 +7,35 @@ const router = express.Router();
 
 router.post('/signup', async (req, res) => {
   const { username, email, password } = req.body;
+
+  // Basic server-side validation
+  if (!username || !email || !password) {
+    return res.status(400).json({ error: 'Username, email, and password are required' });
+  }
+
   try {
     const hashedPw = await bcrypt.hash(password, 10);
-    await pool.query('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [username, email, hashedPw]);
-    res.status(201).json({ message: 'User created' });
+    await pool.query(
+      'INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
+      [username, email, hashedPw]
+    );
+    res.status(201).json({ message: 'User created successfully' });
   } catch (err) {
-    res.status(500).json({ error: 'Error creating user' });
+    console.error('Signup error details:', {
+      message: err.message,
+      code: err.code,
+      sqlMessage: err.sqlMessage || 'No SQL message',
+      sql: err.sql || 'No SQL query'
+    });
+
+    if (err.code === 'ER_DUP_ENTRY') {
+      // This is the most common: duplicate email or username
+      res.status(409).json({ error: 'Email or username already exists. Please use a different one.' });
+    } else if (err.code === 'ER_BAD_FIELD_ERROR') {
+      res.status(500).json({ error: 'Database field mismatch. Contact developer.' });
+    } else {
+      res.status(500).json({ error: 'Error creating user: ' + (err.message || 'Unknown error') });
+    }
   }
 });
 

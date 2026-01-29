@@ -5,7 +5,18 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
   try {
-    const [rows] = await pool.query('SELECT * FROM food_entries WHERE user_id = ? ORDER BY entry_date DESC, id DESC', [req.user.id]);
+    const date = req.query.date;  // Optional: ?date=2026-01-28
+    let query = 'SELECT * FROM food_entries WHERE user_id = ?';
+    let params = [req.user.id];
+
+    if (date) {
+      query += ' AND entry_date = ?';
+      params.push(date);
+    } else {
+      query += ' ORDER BY entry_date DESC, id DESC';
+    }
+
+    const [rows] = await pool.query(query, params);
     res.json(rows);
   } catch (err) {
     res.status(500).json({ error: 'Error fetching food entries' });

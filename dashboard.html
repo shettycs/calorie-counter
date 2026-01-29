@@ -10,11 +10,16 @@
 <body>
     <!-- Header with Navigation Links -->
     <header>
-        <nav>
+        <nav class="dashboard-nav">
+            <div class="logo">
+                <h1>CalorieTracker</h1>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a id="logout" href="#">Log Out</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a id="logout" href="#">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -24,9 +29,7 @@
         <div class="container">
             <h1>Calorie Counter</h1>
 
-            <!-- User Goal Selection -->
-            <div class="goal-selection">
-            </div>
+            <h3>Suggested Daily Goal: <span id="dailyGoal">0</span> kcal</h3>
 
             <!-- Form to Add Food Item -->
             <h2>Add Food Item</h2>
@@ -62,15 +65,20 @@
             </form>
 
             <!-- Displaying Food List and Total Calorie Intake -->
-            <h2>Food List</h2>
-            <ul id="foodList"></ul>
+            <h2>Today's Food List</h2>
+            <ul id="todayFoodList"></ul>
 
-            <h3>Total Calorie Intake: <span id="totalCalories">0</span> kcal</h3>
+            <h3>Total Intake Today: <span id="totalCalories">0</span> kcal</h3>
 
-            <!-- Displaying Goal Status -->
-            <h3 id="goalStatus"></h3>
+            <!-- Progress bar -->
+            <div id="progress-container" style="margin: 20px 0; background-color: #e0e0e0; border-radius: 10px; height: 24px; overflow: hidden;">
+                <div id="progress-fill" style="height: 100%; width: 0%; transition: width 0.5s, background-color 0.5s;"></div>
+            </div>
 
-            <div id="history">
+            <!-- Goal status with color -->
+            <h3 id="goalStatus" class="goal-status">Loading your goal status...</h3>
+
+             <div id="history">
                 <h2>History</h2>
                 <!-- Populated by JS -->
             </div>
